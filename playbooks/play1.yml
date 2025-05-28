@@ -2,6 +2,9 @@
 - name: Web server
   hosts: linux1
   become: true
+
+  vars:
+    - website_name: Test de Ansible-AWX
   tasks:
     - name: Instalar Nginx
       apt:
