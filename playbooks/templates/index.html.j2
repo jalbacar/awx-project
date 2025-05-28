@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ website_name }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px auto;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .content {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>{{ website_name }}</h1>
+    </div>
+    <div class="content">
+        <h2>¡Servidor web configurado exitosamente!</h2>
+        <p>Este servidor fue configurado automáticamente usando Ansible AWX.</p>
+        <p>Servidor: {{ ansible_hostname }}</p>
+        <p>Sistema Operativo: {{ ansible_distribution }} {{ ansible_distribution_version }}</p>
+        <p>Dirección IP: {{ ansible_default_ipv4.address }}</p>
+    </div>
+</body>
+</html>
