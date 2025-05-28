@@ -5,7 +5,15 @@
 
   vars:
     - website_name: Test de Ansible-AWX
+  
+  vars_files:
+    - ./vars/secrets.yml
+
   tasks:
+    - name: Ver api token
+      debug:
+        msg: "{{ api_token }}"
+        
     - name: Instalar Nginx
       apt:
         name: nginx
