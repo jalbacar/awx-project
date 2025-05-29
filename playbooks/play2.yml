@@ -1,0 +1,36 @@
+---
+- name: Test
+  hosts: windows
+  gather_facts: no  # Deshabilitar la recopilación de facts por defecto
+  tasks:
+    - name: Instalar IIS
+      win_feature:
+        name: Web-Server
+        state: present
+
+    - name: Copiar un archivo de configuración
+      win_copy:
+        src: config.ini
+        dest: C:\inetpub\wwwroot\config.ini
+
+    - name: Reiniciar el servicio IIS
+      win_service:
+        name: W3SVC
+        state: restarted---
+- hosts: windows
+  gather_facts: no  # Deshabilitar la recopilación de facts por defecto
+  tasks:
+    - name: Instalar IIS
+      win_feature:
+        name: Web-Server
+        state: present
+
+    - name: Copiar un archivo de configuración
+      win_copy:
+        src: config.ini
+        dest: C:\inetpub\wwwroot\config.ini
+
+    - name: Reiniciar el servicio IIS
+      win_service:
+        name: W3SVC
+        state: restarted
