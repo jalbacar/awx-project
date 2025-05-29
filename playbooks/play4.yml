@@ -1,0 +1,6 @@
+---
+- name: Operar con role
+  hosts: all
+  
+  roles:
+    - webrole
