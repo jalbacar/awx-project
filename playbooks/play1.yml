@@ -1,6 +1,6 @@
 ---
 - name: Web server
-  hosts: linux1
+  hosts: all
   become: true
 
   vars:
